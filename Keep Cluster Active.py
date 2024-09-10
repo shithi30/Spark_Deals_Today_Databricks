@@ -1,6 +1,7 @@
 # import
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import os
 
 # setup
 from pyvirtualdisplay import Display
@@ -15,7 +16,7 @@ driver.get("https://community.cloud.databricks.com/?o=924599453726095#notebook/4
 
 # login
 driver.find_element(By.ID, "login-email").send_keys("shithi30@outlook.com")
-driver.find_element(By.ID, "login-password").send_keys("Kaditchil123@\n")
+driver.find_element(By.ID, "login-password").send_keys(os.getenv("DATABRICKS_PASS") + "\n")
 
 # run
 driver.find_element(By.XPATH, ".//button[@data-testid='notebook-run-all-button']").click()
