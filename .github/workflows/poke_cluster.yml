@@ -1,0 +1,32 @@
+name: Keep Cluster Active
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Purge Chrome
+      run: sudo apt purge google-chrome-stable  
+  
+    - name: Install packages
+      run: pip install selenium pyvirtualdisplay
+      
+    - name: Install xvfb
+      run: sudo apt-get install xvfb
+      
+    - name: Run script
+      run: python "Keep Cluster Active.py"
+      
