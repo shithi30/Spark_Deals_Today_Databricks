@@ -2,6 +2,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+# setup
+from pyvirtualdisplay import Display
+Display(visible = 0, size = (1920, 1080)).start()
+
 # open window
 driver = webdriver.Chrome()
 driver.implicitly_wait(10)
