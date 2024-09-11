@@ -3,6 +3,10 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 
+# setup
+from pyvirtualdisplay import Display
+Display(visible = 0, size = (1920, 1080)).start()
+
 # window
 driver = webdriver.Chrome()
 driver.get("https://www.retailmenot.com/ca")
