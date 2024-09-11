@@ -1,7 +1,7 @@
 # import
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # window
 driver = webdriver.Chrome()
@@ -36,7 +36,7 @@ for s in soup:
 coupon_df["company"] = company
 coupon_df["offer"] = offer
 coupon_df["availability"] = if_coupon_available
-coupon_df["report_date"] = datetime.now().strftime('%Y-%m-%d')
+coupon_df["report_date"] = (datetime.now() - timedelta(hours = 4)).strftime("%d-%b-%Y, %I:%M:%S %p")
 
 # save
 coupon_df.to_parquet("coupons_promos_today.parquet", engine = "pyarrow")
