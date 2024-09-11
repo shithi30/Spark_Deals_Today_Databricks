@@ -1,0 +1,43 @@
+name: Get Coupon Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 * * *"
+
+jobs:
+  coupons_to_parquet:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Purge Chrome
+      run: sudo apt purge google-chrome-stable  
+  
+    - name: Install packages
+      run: pip install pandas selenium beautifulsoup4 pyvirtualdisplay
+      
+    - name: Install xvfb
+      run: sudo apt-get install xvfb
+      
+    - name: Run script
+      run: python "Coupons Today.py"
+
+    - name: Commit changes
+      run: |
+        git config user.email "shithi30@gmail.com"
+        git config user.name "shithi30"
+        git add "coupons_promos_today.parquet"
+        git commit -m "Updated from workflow"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITPAT_TOKEN }}
