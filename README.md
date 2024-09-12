@@ -2,7 +2,7 @@
   <img width="640" alt="c5" src="https://github.com/user-attachments/assets/6fb36260-60cd-4803-8fcf-38062014fe87"><br>
 </p>
 
-<b>Tech stack:</b> ```Spark SQL``` ```Databricks``` ```Azure Functions```  ```BigQuery, parquet, json, csv```<br>
+<strong>Tech Stack</strong>: ```Spark SQL``` ```Databricks``` ```Azure Functions```  ```BigQuery, parquet, json, csv```<br>
 
 - Published Databricks Notebook, [here](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/924599453726095/879705943519200/6360372523481634/latest.html).
 - Script (deployed on Azure Function Apps) to keep Community Edition cluster active, [here](https://github.com/shithi30/Azure_Deployments).
