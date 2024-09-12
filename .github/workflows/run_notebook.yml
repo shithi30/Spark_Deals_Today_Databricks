@@ -1,12 +1,12 @@
-name: Keep Cluster Active
+name: Get Results - Today
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 21 * * *"
 
 jobs:
-  activate:
+  results_today:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,6 +28,6 @@ jobs:
       run: sudo apt-get install xvfb
       
     - name: Run script
-      run: python "Keep Cluster Active.py"
+      run: python "Run Notebook.py"
       env: 
           DATABRICKS_PASS: ${{ secrets.DATABRICKS_PASS }}    
