@@ -12,7 +12,7 @@ driver = webdriver.Chrome()
 driver.implicitly_wait(10)
 
 # notebook
-driver.get("https://community.cloud.databricks.com/?o=924599453726095#notebook/4004368016220956")
+driver.get("https://community.cloud.databricks.com/?o=924599453726095#notebook/879705943519200/command/4454688346219223")
 
 # login
 driver.find_element(By.ID, "login-email").send_keys("shithi30@outlook.com")
