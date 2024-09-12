@@ -44,7 +44,7 @@ coupon_df["availability"] = if_coupon_available
 coupon_df["report_date"] = (datetime.now() - timedelta(hours = 4)).strftime("%d-%b-%Y, %I:%M:%S %p")
 
 # save
-coupon_df.to_parquet("coupons_promos_today.parquet", engine = "pyarrow")
+coupon_df.to_parquet("Coupons & Promos Today.parquet", engine = "pyarrow")
 
 # end
 print("Total offers found: " + str(coupon_df.shape[0]))
