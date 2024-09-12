@@ -36,7 +36,7 @@ jobs:
       run: |
         git config user.email "shithi30@gmail.com"
         git config user.name "shithi30"
-        git add "coupons_promos_today.parquet"
+        git add "Coupons & Promos Today.parquet"
         git commit -m "Updated from workflow"
 
     - name: Push changes
