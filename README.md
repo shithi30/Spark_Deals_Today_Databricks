@@ -6,6 +6,6 @@
 - Script (deployed on Azure Function Apps) to keep Community Edition Cluster active, [here](https://github.com/shithi30/Azure_Deployments).
 - Cluster: 12.2 LTS (includes Apache Spark 3.3.2, Scala 2.12), 15.3 GB Memory, 2 Cores, 1 DBU; Free 15 GB Memory; Community Edition user - compute will auto terminate after an idle period of 1/2 hours.
 
-<strong>Note</strong>: Scraper complies with robots.txt regulations.
+  <strong>Note</strong>: Scraper complies with robots.txt regulations.
 
 
